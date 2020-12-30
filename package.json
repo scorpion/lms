@@ -1,0 +1,19 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "start": "yarn workspace frontend start",
+    "test": "jest"
+  },
+  "version": "0.1.0",
+  "description": "Scorpion LMS.",
+  "repository": "https://github.com/scorpion/lms",
+  "author": "Brett Wilcox <brett@scorpion.io> (https://scorpion.io)",
+  "license": "",
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  },
+  "workspaces": [
+    "app/frontend"
+  ]
+}
