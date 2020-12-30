@@ -1,0 +1,42 @@
+version: "3"
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+
+services:
+  # Redis
+  redis:
+    build:
+      context: ./docker/redis
+    expose:
+      - "6379"
+    ports:
+      - "6379:6379"
+    restart: always
+    networks:
+      - backend
+      - frontend
+
+  # RabbitMQ
+  rabbitmq:
+    environment:
+      - RABBITMQ_IMAGE
+      - RABBITMQ_VER
+      - RABBITMQ_DEFAULT_USER
+      - RABBITMQ_DEFAULT_PASS
+    networks:
+      - frontend
+      - backend
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    build:
+      context: ./docker/rabbitmq
+      args:
+        # This is needed for passing environment variables to the docker build contect.
+        - "RABBITMQ_VER=${RABBITMQ_VER}"
+        - "RABBITMQ_IMAGE=${RABBITMQ_IMAGE}"
+    restart: always
