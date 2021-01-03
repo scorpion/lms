@@ -7,5 +7,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: ['gatsby-plugin-postcss'],
+  plugins: ['@tailwindcss/forms', 'gatsby-plugin-postcss', '@tailwindcss/typography'],
 }
