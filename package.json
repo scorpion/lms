@@ -9,11 +9,11 @@
   "description": "Scorpion LMS.",
   "repository": "https://github.com/scorpion/lms",
   "author": "Brett Wilcox <brett@scorpion.io> (https://scorpion.io)",
-  "license": "",
-  "devDependencies": {
-    "prettier": "^2.2.1"
-  },
+  "license": "Apache-2.0",
   "workspaces": [
     "app/frontend"
-  ]
+  ],
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
 }

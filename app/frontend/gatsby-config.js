@@ -5,13 +5,6 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-env-variables`,
-      options: {
-        allowList: ["DB_USERNAME", "DB_PASSWORD"]
-      },
-    },
-    `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
